@@ -1,9 +1,5 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
-import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
-import System.IO
 import Graphics.X11.ExtraTypes.XF86
 
 import qualified Data.Map        as M
