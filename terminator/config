@@ -10,6 +10,8 @@
     scrollback_lines = 5000
     show_titlebar = False
     background_image = None
+    use_system_font = False
+    font = DejaVu Sans Mono 9
     cursor_blink = False
 [layouts]
   [[default]]
