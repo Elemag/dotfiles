@@ -1,8 +1,10 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout.NoBorders
 
-import qualified Data.Map        as M
+import qualified Data.Map as Map
 
 xF86XK_AudioMicMute :: KeySym
 xF86XK_AudioMicMute = 0x1008FFB2
@@ -15,10 +17,14 @@ myConfig = defaultConfig {
         borderWidth = 1,
 
         -- key bindings
-        keys = myKeys <+> keys defaultConfig
+        keys = myKeys <+> keys defaultConfig,
+
+        -- layout
+        layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig,
+        manageHook = manageHook defaultConfig <+> manageDocks
     }
 
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
         [ ((modm, xK_c ), spawn "chromium"),
           ((modm .|. shiftMask, xK_l ), spawn "slock"),
           ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 5"),
