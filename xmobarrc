@@ -1,3 +1,23 @@
 Config {
-    position = TopW L 90
-}
+        -- font = "xft:Deja Vu Sans:size=8:antialias=true",
+        bgColor = "black",
+        fgColor = "lightgray",
+        position = TopW L 96,
+        commands = [ Run DynNetwork ["-t", "Net: <rxvbar><txvbar>", "-L","0","-H","32","--normal","green","--high","red"] 10,
+                     Run MultiCpu ["-L","15","-H","50","--normal","green","--high","red"] 10,
+                     Run Memory ["-t","Mem: <usedratio>%", "-L","50","-H","90","--normal","green","--high","red"] 10,
+                     Run Battery ["-t", "<acstatus> <left>%", "-L", "10", "-H", "80", "--low", "red", "--normal", "orange", "--high", "green"] 50,
+                     Run Date "%a %b %_d %Y %H:%M:%S" "date" 10,
+                     Run Kbd [("us", "[US]"), ("bg(phonetic)", "[BG]")],
+                     Run Weather "LBSF" ["-t", "<station>: <tempC>C"] 36000,
+                     -- TODO: compile xmobar with alsa support & MPD
+                     -- Run Volume "Master" "Master" [] 10,
+                     Run Locks,
+                     Run Brightness ["-t", "Bri: <percent>%",  "--", "-D", "intel_backlight"] 10,
+                     Run StdinReader
+                     ],
+        sepChar = "%",
+        alignSep = "}{",
+        template = "%StdinReader% } { %multicpu% | %memory% | %dynnetwork% | %battery% | %bright% | %LBSF% | <fc=cyan>%locks%</fc><fc=magenta>%kbd%</fc> | %default:Master% | %date%"
+        }
+
