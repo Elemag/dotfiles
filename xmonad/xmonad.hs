@@ -26,7 +26,7 @@ myConfig = defaultConfig {
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
         [ ((modm, xK_c ), spawn "chromium"),
-          ((modm .|. shiftMask, xK_l ), spawn "slock"),
+          ((mod1Mask .|. controlMask, xK_l ), spawn "slock"),
           ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 5"),
           ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 5"),
           ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set Master 2%+ unmute"),
