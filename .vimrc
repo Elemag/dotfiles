@@ -12,7 +12,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 filetype plugin indent on
@@ -20,6 +19,8 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+colorscheme molokai
 
 syntax on
 set background=dark
@@ -31,10 +32,10 @@ set expandtab
 set ignorecase
 set laststatus=2
 
+highlight MatchParen cterm=bold ctermbg=none ctermfg=magenta gui=bold guibg=NONE guifg=magenta
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-
-colorscheme molokai
 
 au Filetype ruby setlocal ts=2 sts=2 sw=2
 au Filetype javascript setlocal ts=2 sts=2 sw=2
