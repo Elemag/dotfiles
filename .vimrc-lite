@@ -1,0 +1,26 @@
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+endif
+
+filetype plugin indent on
+
+syntax on
+set background=dark
+set hlsearch
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set ignorecase
+set laststatus=2
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+au Filetype ruby setlocal ts=2 sts=2 sw=2
+au Filetype javascript setlocal ts=2 sts=2 sw=2
+au Filetype java setlocal ts=4 sts=4 sw=4
+
+au BufRead,BufNewFile *.hs set ft=haskell

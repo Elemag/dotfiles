@@ -12,6 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 filetype plugin indent on
@@ -37,6 +38,7 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=magenta gui=bold guibg=NONE
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+au Filetype yaml setlocal ts=2 sts=2 sw=2
 au Filetype ruby setlocal ts=2 sts=2 sw=2
 au Filetype javascript setlocal ts=2 sts=2 sw=2
 au Filetype java setlocal ts=4 sts=4 sw=4
